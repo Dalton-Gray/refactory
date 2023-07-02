@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "gpt-api"
+  site-url: "https://Dalton.github.io/gpt-api"
+  description: "mvp"
+  repo-branch: master
+  repo-url: "https://github.com/Dalton/gpt-api"
