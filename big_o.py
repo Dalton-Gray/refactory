@@ -9,9 +9,8 @@ np.random.seed(42)
 # Create a DataFrame with random values
 df = pd.DataFrame(np.random.randn(1000000, 5), columns=['A', 'B', 'C', 'D', 'E'])
 
-# Iterate through the DataFrame and add 10 to each row of each column
-for index, row in df.iterrows():
-    df.loc[index] = row + 10
+# Use the apply and lambda functions to add 10 to each row of each column
+df = df.apply(lambda row: row + 10)
 
 print(df)
 end = time.time()

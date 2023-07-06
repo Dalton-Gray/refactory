@@ -10,8 +10,10 @@ np.random.seed(42)
 df = pd.DataFrame(np.random.randn(1000000, 5), columns=['A', 'B', 'C', 'D', 'E'])
 
 # Iterate through the DataFrame and add 10 to each row of each column
-for index, row in df.iterrows():
-    df.loc[index] = row + 10
+start = time.time()
+df = df + 10
+end = time.time()
+print(end - start)
 
 print(df)
 end = time.time()
