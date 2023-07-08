@@ -7,19 +7,19 @@ __all__ = ['clean_code', 'big_o', 'runtime', 'bugs']
 from .openai_api import *
 import openai
 
-# %% ../nbs/01_operations.ipynb 11
+# %% ../nbs/01_operations.ipynb 7
 # Readability & maintainability
 def clean_code(python_file:str) -> str:
-    return clean_code
+    return optimization(python_file, metric='clean code')
 
-# %% ../nbs/01_operations.ipynb 12
-def big_o():
-    pass
+# %% ../nbs/01_operations.ipynb 9
+def big_o(python_file:str):
+    return optimization(python_file, metric='big O space and time complexity')
 
-# %% ../nbs/01_operations.ipynb 13
-def runtime():
-    pass
+# %% ../nbs/01_operations.ipynb 10
+def runtime(python_file:str):
+    return optimization(python_file, metric='runtime')
 
-# %% ../nbs/01_operations.ipynb 14
-def bugs():
-    pass 
+# %% ../nbs/01_operations.ipynb 11
+def bugs(python_file:str):
+    return optimization(python_file, metric='bugs') 
