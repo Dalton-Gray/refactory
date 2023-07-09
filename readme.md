@@ -7,7 +7,7 @@ documentation.
 
 ## Install
 
-``` sh
+```sh
 pip install gpt_api
 ```
 
@@ -15,7 +15,7 @@ pip install gpt_api
 
 Fill me in please! Don’t forget code examples:
 
-``` python
+```python
 1+1
 ```
 
