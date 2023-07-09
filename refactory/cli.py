@@ -33,29 +33,31 @@ def refactor_file(raw_file_location):
 @click.argument('operation', type=click.Choice(OPERATIONS.keys()), default='r')
 @click.argument('filein', type=click.Path(exists=True), required=1)
 @click.argument('fileout', type=click.Path(exists=False), required=1)
+@click.argument('key', required=1)
 # @click.option('--refactor', prompt="Select an operation", help='A command for refactoring your code. Defaults to runtime optimization')
-def refactor(operation:str, filein:str, fileout:str):
-    openai.api_key = load_api_key()
+def refactor(operation:str, filein:str, fileout:str, key:str):
+    # openai.api_key = load_api_key()
+    openai.api_key = key
     raw_file = read_file(filein)
     optimized_file = optimization(raw_file, operation)
     write_file(optimized_file, fileout) 
     click.echo('file optimized!')
 
-# %% ../nbs/02_cli.ipynb 11
+# %% ../nbs/02_cli.ipynb 13
 @click.command()
 @click.option('--name', prompt="Enter your name", help='The name of the user')
 def hello(name):
     click.echo(f'hello {name}!')
 
-# %% ../nbs/02_cli.ipynb 12
+# %% ../nbs/02_cli.ipynb 14
 @click.group
 def commands():
     pass
 
 
-# %% ../nbs/02_cli.ipynb 13
+# %% ../nbs/02_cli.ipynb 15
 commands.add_command(refactor)
 
-# %% ../nbs/02_cli.ipynb 14
+# %% ../nbs/02_cli.ipynb 16
 if __name__ == '__main__':
     commands()
